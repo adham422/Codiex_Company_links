@@ -25,7 +25,9 @@ align-items:center;
 padding:20px;
 color:#fff;
 background:#0f172a;
-overflow:hidden;
+
+/* FIX SCROLL ONLY */
+overflow-x:hidden;
 }
 
 /* BACKGROUND */
@@ -170,9 +172,11 @@ to{transform:translateY(0);opacity:1;}
 from{transform:translateY(-20px);opacity:0;}
 to{transform:translateY(0);opacity:1;}
 }
+
 .header img {
   width: 100px;
 }
+
 .status{
 display:flex;
 align-items:center;
@@ -198,21 +202,19 @@ animation:pulse 1.5s infinite;
 50%{transform:scale(1.6);opacity:.4;}
 100%{transform:scale(1);opacity:1;}
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
 <div id="particles"></div>
 
-<!-- HEADER -->
 <div class="header">
 <img src="./logo.png" alt="logo">
 <span class="status">Online</span>
 </div>
 
-<!-- ICONS -->
 <div class="icons">
 
 <div class="icon-box">
@@ -280,7 +282,6 @@ animation:pulse 1.5s infinite;
 
 </div>
 
-<!-- PARTICLES SCRIPT -->
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <script>
@@ -299,5 +300,6 @@ tsParticles.load("particles", {
   }
 });
 </script>
+
 </body>
 </html>
