@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Links</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+        width: 100%;
+      }
+
+      h1 {
+        color: #fff;
+        margin-bottom: 30px;
+        font-size: 26px;
+      }
+
+      /* GRID RESPONSIVE */
+      .icons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 500px;
+        margin: auto;
+      }
+
+      /* TABLET */
+      @media (max-width: 768px) {
+        .icons {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* MOBILE */
+      @media (max-width: 480px) {
+        .icons {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .icon {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+        transition: 0.3s;
+        backdrop-filter: blur(10px);
+        text-decoration: none;
+      }
+
+      .icon:hover {
+        transform: translateY(-6px) scale(1.05);
+      }
+
+      /* COLORS */
+      .facebook:hover {
+        background: #1877f2;
+      }
+      .website:hover {
+        background: #22c55e;
+        color: #fff;
+      }
+      .github:hover {
+        background: #ffffff;
+        color: #000;
+      }
+      .linkedin:hover {
+        background: #0a66c2;
+      }
+      .instagram:hover {
+        background: #e1306c;
+      }
+      .youtube:hover {
+        background: #ff0000;
+      }
+      .twitter:hover {
+        background: #1da1f2;
+      }
+      .tiktok:hover {
+        background: #000;
+      }
+      .snapchat:hover {
+        background: #fffc00;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>My Social Links</h1>
+
+      <div class="icons">
+        <a class="icon website" href="https://adham422.github.io/t-tec-company/#/" target="_blank">
+          <i class="fa-solid fa-globe"></i>
+        </a>
+        <a
+          class="icon facebook"
+          href="https://www.facebook.com/profile.php?id=61589598104517"
+          target="_blank"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a
+          class="icon linkedin"
+          href="https://www.linkedin.com/company/codeix/about/?viewAsMember=true"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a
+          class="icon instagram"
+          href="https://www.instagram.com/codeix_company/?hl=en"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a
+          class="icon youtube"
+          href="https://www.youtube.com/@adhamhashem5303"
+          target="_blank"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <a class="icon twitter" href="https://x.com/Codeix0" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <a
+          class="icon tiktok"
+          href="https://www.tiktok.com/@codeix0?lang=en"
+          target="_blank"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a
+          class="icon snapchat"
+          href="https://www.snapchat.com/web"
+          target="_blank"
+        >
+          <i class="fab fa-snapchat-ghost"></i>
+        </a>
+        <a
+          class="icon github"
+          href="https://github.com/codeix0"
+          target="_blank"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
