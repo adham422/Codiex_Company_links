@@ -1,187 +1,303 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Links</title>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Codeix Links</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
+<style>
 
-      body {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #0f172a, #1e293b);
-        padding: 20px;
-      }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
-      .container {
-        text-align: center;
-        width: 100%;
-      }
+body{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:20px;
+color:#fff;
+background:#0f172a;
+overflow:hidden;
+}
 
-      h1 {
-        color: #fff;
-        margin-bottom: 30px;
-        font-size: 26px;
-      }
+/* BACKGROUND */
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+}
 
-      /* GRID RESPONSIVE */
-      .icons {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        max-width: 500px;
-        margin: auto;
-      }
+/* HEADER */
+.header{
+width:100%;
+max-width:600px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+padding:15px 20px;
+border-radius:15px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+animation:fadeDown 1s ease;
+box-shadow:0 0 30px rgba(255,255,255,0.05);
+}
 
-      /* TABLET */
-      @media (max-width: 768px) {
-        .icons {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
+.header img{
+width:40px;
+height:40px;
+border-radius:10px;
+object-fit:cover;
+}
 
-      /* MOBILE */
-      @media (max-width: 480px) {
-        .icons {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
+.header h2{
+font-size:20px;
+letter-spacing:1px;
+}
 
-      .icon {
-        width: 100%;
-        aspect-ratio: 1/1;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 28px;
-        cursor: pointer;
-        transition: 0.3s;
-        backdrop-filter: blur(10px);
-        text-decoration: none;
-      }
+/* GRID */
+.icons{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+max-width:500px;
+width:100%;
+}
 
-      .icon:hover {
-        transform: translateY(-6px) scale(1.05);
-      }
+/* RESPONSIVE */
+@media(max-width:768px){
+.icons{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:480px){
+.icons{grid-template-columns:repeat(2,1fr);}
+}
 
-      /* COLORS */
-      .facebook:hover {
-        background: #1877f2;
-      }
-      .website:hover {
-        background: #22c55e;
-        color: #fff;
-      }
-      .github:hover {
-        background: #ffffff;
-        color: #000;
-      }
-      .linkedin:hover {
-        background: #0a66c2;
-      }
-      .instagram:hover {
-        background: #e1306c;
-      }
-      .youtube:hover {
-        background: #ff0000;
-      }
-      .twitter:hover {
-        background: #1da1f2;
-      }
-      .tiktok:hover {
-        background: #000;
-      }
-      .snapchat:hover {
-        background: #fffc00;
-        color: #000;
-      }
-    </style>
-  </head>
+/* CARD */
+.icon-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:8px;
+animation:fadeUp 0.8s ease forwards;
+opacity:0;
+}
 
-  <body>
-    <div class="container">
-      <h1>My Social Links</h1>
+.icon-box:nth-child(1){animation-delay:.1s;}
+.icon-box:nth-child(2){animation-delay:.2s;}
+.icon-box:nth-child(3){animation-delay:.3s;}
+.icon-box:nth-child(4){animation-delay:.4s;}
+.icon-box:nth-child(5){animation-delay:.5s;}
+.icon-box:nth-child(6){animation-delay:.6s;}
+.icon-box:nth-child(7){animation-delay:.7s;}
+.icon-box:nth-child(8){animation-delay:.8s;}
+.icon-box:nth-child(9){animation-delay:.9s;}
 
-      <div class="icons">
-        <a class="icon website" href="https://adham422.github.io/t-tec-company/#/" target="_blank">
-          <i class="fa-solid fa-globe"></i>
-        </a>
-        <a
-          class="icon facebook"
-          href="https://www.facebook.com/profile.php?id=61589598104517"
-          target="_blank"
-        >
-          <i class="fab fa-facebook-f"></i>
-        </a>
+.icon{
+width:100%;
+aspect-ratio:1/1;
+border-radius:18px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+color:#fff;
+text-decoration:none;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
 
-        <a
-          class="icon linkedin"
-          href="https://www.linkedin.com/company/codeix/about/?viewAsMember=true"
-          target="_blank"
-        >
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+/* glow effect */
+.icon::before{
+content:'';
+position:absolute;
+width:150%;
+height:150%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
+transform:rotate(45deg);
+top:-100%;
+left:-100%;
+transition:.5s;
+}
 
-        <a
-          class="icon instagram"
-          href="https://www.instagram.com/codeix_company/?hl=en"
-          target="_blank"
-        >
-          <i class="fab fa-instagram"></i>
-        </a>
+.icon:hover::before{
+top:100%;
+left:100%;
+}
 
-        <a
-          class="icon youtube"
-          href="https://www.youtube.com/@adhamhashem5303"
-          target="_blank"
-        >
-          <i class="fab fa-youtube"></i>
-        </a>
+.icon:hover{
+transform:translateY(-8px) scale(1.08);
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
 
-        <a class="icon twitter" href="https://x.com/Codeix0" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
+/* TEXT */
+.icon-text{
+font-size:13px;
+opacity:.8;
+}
 
-        <a
-          class="icon tiktok"
-          href="https://www.tiktok.com/@codeix0?lang=en"
-          target="_blank"
-        >
-          <i class="fab fa-tiktok"></i>
-        </a>
+/* COLORS */
+.facebook:hover{background:#1877f2;}
+.website:hover{background:#22c55e;}
+.github:hover{background:#fff;color:#000;}
+.linkedin:hover{background:#0a66c2;}
+.instagram:hover{background:#e1306c;}
+.youtube:hover{background:#ff0000;}
+.twitter:hover{background:#1da1f2;}
+.tiktok:hover{background:#000;}
+.snapchat:hover{background:#fffc00;color:#000;}
 
-        <a
-          class="icon snapchat"
-          href="https://www.snapchat.com/web"
-          target="_blank"
-        >
-          <i class="fab fa-snapchat-ghost"></i>
-        </a>
-        <a
-          class="icon github"
-          href="https://github.com/codeix0"
-          target="_blank"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </div>
-  </body>
+/* ANIMATION */
+@keyframes fadeUp{
+from{transform:translateY(20px);opacity:0;}
+to{transform:translateY(0);opacity:1;}
+}
+
+@keyframes fadeDown{
+from{transform:translateY(-20px);opacity:0;}
+to{transform:translateY(0);opacity:1;}
+}
+.header img {
+  width: 100px;
+}
+.status{
+display:flex;
+align-items:center;
+gap:6px;
+font-size:12px;
+color:#22c55e;
+font-family:'Segoe UI',sans-serif;
+opacity:0.9;
+}
+
+.status::before{
+content:'';
+width:8px;
+height:8px;
+background:#22c55e;
+border-radius:50%;
+box-shadow:0 0 8px #22c55e;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);opacity:1;}
+50%{transform:scale(1.6);opacity:.4;}
+100%{transform:scale(1);opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div id="particles"></div>
+
+<!-- HEADER -->
+<div class="header">
+<img src="/logo.png" alt="logo">
+<span class="status">Online</span>
+</div>
+
+<!-- ICONS -->
+<div class="icons">
+
+<div class="icon-box">
+<a class="icon website" href="https://adham422.github.io/t-tec-company/#/" target="_blank">
+<i class="fa-solid fa-globe"></i>
+</a>
+<span class="icon-text">Website</span>
+</div>
+
+<div class="icon-box">
+<a class="icon facebook" href="https://www.facebook.com/profile.php?id=61589598104517" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+<span class="icon-text">Facebook</span>
+</div>
+
+<div class="icon-box">
+<a class="icon linkedin" href="https://www.linkedin.com/company/codeix/about/?viewAsMember=true" target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
+<span class="icon-text">LinkedIn</span>
+</div>
+
+<div class="icon-box">
+<a class="icon instagram" href="https://www.instagram.com/codeix_company/?hl=en" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+<span class="icon-text">Instagram</span>
+</div>
+
+<div class="icon-box">
+<a class="icon youtube" href="https://www.youtube.com/@adhamhashem5303" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+<span class="icon-text">YouTube</span>
+</div>
+
+<div class="icon-box">
+<a class="icon twitter" href="https://x.com/Codeix0" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+<span class="icon-text">Twitter</span>
+</div>
+
+<div class="icon-box">
+<a class="icon tiktok" href="https://www.tiktok.com/@codeix0?lang=en" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
+<span class="icon-text">TikTok</span>
+</div>
+
+<div class="icon-box">
+<a class="icon snapchat" href="https://www.snapchat.com/web" target="_blank">
+<i class="fab fa-snapchat-ghost"></i>
+</a>
+<span class="icon-text">Snapchat</span>
+</div>
+
+<div class="icon-box">
+<a class="icon github" href="https://github.com/codeix0" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+<span class="icon-text">GitHub</span>
+</div>
+
+</div>
+
+<!-- PARTICLES SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+tsParticles.load("particles", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 2 },
+    move: { speed: 1 },
+    opacity: { value: 0.4 },
+    links: {
+      enable: true,
+      distance: 120,
+      color: "#ffffff",
+      opacity: 0.2
+    }
+  }
+});
+</script>
+</body>
 </html>
