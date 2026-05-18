@@ -3,306 +3,448 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Codeix Links</title>
+<title>Codeix | Executive Connect</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<!-- Font Awesome 6 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
-
+/* إعدادات الخطوط والأساسيات */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 }
-html, body{
-height:auto;
-min-height:100%;
-}
+
 body{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:20px;
-color:#fff;
-background:#0f172a;
-height:auto;
-min-height:100vh;
-overflow-y:auto;
-overflow-x:hidden;
--webkit-overflow-scrolling:touch;
-touch-action:auto;
+min-height: 100vh;
+background-color: #0b0f19;
+color: #f1f5f9;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 40px 20px;
+position: relative;
+overflow-x: hidden;
 }
 
-/* BACKGROUND */
-#particles{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:-1;
+/* تأثيرات خلفية سينمائية مضيئة */
+body::before {
+content: "";
+position: fixed;
+top: -10%;
+right: -10%;
+width: 50vw;
+height: 50vh;
+background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+z-index: -1;
+}
+body::after {
+content: "";
+position: fixed;
+bottom: -10%;
+left: -10%;
+width: 50vw;
+height: 50vh;
+background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+z-index: -1;
 }
 
-/* HEADER */
-.header{
-width:100%;
-max-width:600px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
-padding:15px 20px;
-border-radius:15px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-animation:fadeDown 1s ease;
-box-shadow:0 0 30px rgba(255,255,255,0.05);
+#particles {
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: -2;
 }
 
-.header img{
-width:40px;
-height:40px;
-border-radius:10px;
-object-fit:cover;
+/* الحاوية الرئيسية بنظام الـ Split Layout (تقسيم الشاشة الاحترافي) */
+.main-wrapper {
+display: flex;
+width: 100%;
+max-width: 1050px;
+background: rgba(17, 24, 39, 0.6);
+backdrop-filter: blur(25px);
+-webkit-backdrop-filter: blur(25px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+animation: scaleUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.header h2{
-font-size:20px;
-letter-spacing:1px;
+/* الجزء الأيسر: بروفايل الشركة والثبات */
+.profile-sidebar {
+flex: 1;
+background: rgba(15, 23, 42, 0.7);
+border-right: 1px solid rgba(255, 255, 255, 0.05);
+padding: 60px 40px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+gap: 24px;
 }
 
-/* GRID */
-.icons{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-max-width:500px;
-width:100%;
+.logo-wrapper {
+position: relative;
+padding: 10px;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-.icons{grid-template-columns:repeat(3,1fr);}
-}
-@media(max-width:480px){
-.icons{grid-template-columns:repeat(2,1fr);}
-}
-
-/* CARD */
-.icon-box{
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:8px;
-animation:fadeUp 0.8s ease forwards;
-opacity:0;
+.profile-sidebar img {
+width: 150px; /* تكبير حجم اللوجو بشكل ظاهر وفخم */
+height: auto;
+border-radius: 24px;
+filter: drop-shadow(0 10px 20px rgba(99, 102, 241, 0.3));
+animation: float 4s ease-in-out infinite;
 }
 
-.icon-box:nth-child(1){animation-delay:.1s;}
-.icon-box:nth-child(2){animation-delay:.2s;}
-.icon-box:nth-child(3){animation-delay:.3s;}
-.icon-box:nth-child(4){animation-delay:.4s;}
-.icon-box:nth-child(5){animation-delay:.5s;}
-.icon-box:nth-child(6){animation-delay:.6s;}
-.icon-box:nth-child(7){animation-delay:.7s;}
-.icon-box:nth-child(8){animation-delay:.8s;}
-.icon-box:nth-child(9){animation-delay:.9s;}
-
-.icon{
-width:100%;
-aspect-ratio:1/1;
-border-radius:18px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:28px;
-color:#fff;
-text-decoration:none;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-transition:.3s;
-position:relative;
-overflow:hidden;
+.company-info h1 {
+font-size: 26px;
+font-weight: 700;
+letter-spacing: 0.5px;
+background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 8px;
 }
 
-/* glow effect */
-.icon::before{
-content:'';
-position:absolute;
-width:150%;
-height:150%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
-transform:rotate(45deg);
-top:-100%;
-left:-100%;
-transition:.5s;
+.company-info p {
+font-size: 14px;
+color: #64748b;
+margin-bottom: 15px;
 }
 
-.icon:hover::before{
-top:100%;
-left:100%;
+.status-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+font-size: 13px;
+font-weight: 600;
+color: #10b981;
+background: rgba(16, 185, 129, 0.1);
+padding: 8px 20px;
+border-radius: 100px;
+border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
-.icon:hover{
-transform:translateY(-8px) scale(1.08);
-box-shadow:0 10px 25px rgba(0,0,0,.4);
+.status-badge::before {
+content: '';
+width: 8px;
+height: 8px;
+background: #10b981;
+border-radius: 50%;
+box-shadow: 0 0 10px #10b981;
+animation: pulse 2s infinite;
 }
 
-/* TEXT */
-.icon-text{
-font-size:13px;
-opacity:.8;
+/* الجزء الأيمن: قائمة الروابط الذكية والمستطيلة */
+.links-section {
+flex: 1.4;
+padding: 50px 40px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+max-height: 75vh;
+overflow-y: auto;
+/* تخصيص السكرول بار ليناسب التصميم */
+scrollbar-width: thin;
+scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+.links-section::-webkit-scrollbar { width: 6px; }
+.links-section::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+/* طريقة العرض الجديدة (كروت عرضية واسعة وممتدة) */
+.link-card {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 18px 24px;
+background: rgba(255, 255, 255, 0.02);
+border: 1px solid rgba(255, 255, 255, 0.05);
+border-radius: 20px;
+text-decoration: none;
+color: #cbd5e1;
+transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+opacity: 0;
+animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* COLORS */
-.facebook:hover{background:#1877f2;}
-.website:hover{background:#22c55e;}
-.github:hover{background:#fff;color:#000;}
-.linkedin:hover{background:#0a66c2;}
-.instagram:hover{background:#e1306c;}
-.youtube:hover{background:#ff0000;}
-.twitter:hover{background:#1da1f2;}
-.tiktok:hover{background:#000;}
-.snapchat:hover{background:#fffc00;color:#000;}
+/* توزيع حركات الظهور التتابعية */
+.link-card:nth-child(1) { animation-delay: 0.1s; }
+.link-card:nth-child(2) { animation-delay: 0.15s; }
+.link-card:nth-child(3) { animation-delay: 0.2s; }
+.link-card:nth-child(4) { animation-delay: 0.25s; }
+.link-card:nth-child(5) { animation-delay: 0.3s; }
+.link-card:nth-child(6) { animation-delay: 0.35s; }
+.link-card:nth-child(7) { animation-delay: 0.4s; }
+.link-child:nth-child(8) { animation-delay: 0.45s; }
+.link-card:nth-child(9) { animation-delay: 0.5s; }
 
-/* ANIMATION */
-@keyframes fadeUp{
-from{transform:translateY(20px);opacity:0;}
-to{transform:translateY(0);opacity:1;}
+.card-left {
+display: flex;
+align-items: center;
+gap: 20px;
 }
 
-@keyframes fadeDown{
-from{transform:translateY(-20px);opacity:0;}
-to{transform:translateY(0);opacity:1;}
+/* الأيقونات الدائرية الصغيرة والراقية */
+.icon-holder {
+width: 48px;
+height: 48px;
+border-radius: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 20px;
+background: rgba(255, 255, 255, 0.05);
+color: #fff;
+transition: all 0.4s ease;
 }
 
-.header img {
-  width: 100px;
+.card-info {
+display: flex;
+flex-direction: column;
+gap: 2px;
 }
 
-.status{
-display:flex;
-align-items:center;
-gap:6px;
-font-size:12px;
-color:#22c55e;
-font-family:'Segoe UI',sans-serif;
-opacity:0.9;
+.card-title {
+font-size: 16px;
+font-weight: 600;
+color: #f1f5f9;
+transition: color 0.3s ease;
 }
 
-.status::before{
-content:'';
-width:8px;
-height:8px;
-background:#22c55e;
-border-radius:50%;
-box-shadow:0 0 8px #22c55e;
-animation:pulse 1.5s infinite;
+.card-subtitle {
+font-size: 12px;
+color: #64748b;
 }
 
-@keyframes pulse{
-0%{transform:scale(1);opacity:1;}
-50%{transform:scale(1.6);opacity:.4;}
-100%{transform:scale(1);opacity:1;}
+/* سهم الانتقال اللطيف على اليمين */
+.arrow-action {
+font-size: 14px;
+color: #475569;
+transform: translateX(0);
+transition: all 0.3s ease;
 }
 
+/* تلوين الهوفر الخاص بكل منصة بدقة واحترافية وبدون مبالغة */
+.link-card:hover {
+transform: translateX(6px);
+background: rgba(255, 255, 255, 0.05);
+border-color: rgba(255, 255, 255, 0.15);
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.link-card:hover .arrow-action {
+transform: translateX(4px);
+color: #fff;
+}
+
+/* لمسات الهوفر الملونة للأيقونات */
+.website:hover .icon-holder { background: #22c55e; box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+.facebook:hover .icon-holder { background: #1877f2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.4); }
+.linkedin:hover .icon-holder { background: #0a66c2; box-shadow: 0 0 15px rgba(10, 102, 194, 0.4); }
+.instagram:hover .icon-holder { background: #e1306c; box-shadow: 0 0 15px rgba(225, 48, 108, 0.4); }
+.youtube:hover .icon-holder { background: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+.twitter:hover .icon-holder { background: #1da1f2; box-shadow: 0 0 15px rgba(29, 161, 242, 0.4); }
+.tiktok:hover .icon-holder { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+.snapchat:hover .icon-holder { background: #fffc00; color: #000; box-shadow: 0 0 15px rgba(255, 252, 0, 0.4); }
+.github:hover .icon-holder { background: #24292e; box-shadow: 0 0 15px rgba(36, 41, 46, 0.4); }
+
+
+/* الأنميشنز */
+@keyframes scaleUp {
+from { transform: scale(0.96); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideIn {
+from { transform: translateY(20px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+
+/* تحويل التصميم كلياً ليناسب الموبايل بشكل مثالي وبسيط */
+@media (max-width: 850px) {
+.main-wrapper {
+flex-direction: column;
+border-radius: 24px;
+}
+.profile-sidebar {
+border-right: none;
+border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+padding: 40px 20px;
+}
+.profile-sidebar img { width: 110px; }
+.links-section {
+padding: 30px 20px;
+max-height: none;
+}
+.link-card {
+padding: 14px 18px;
+}
+.icon-holder {
+width: 42px;
+height: 42px;
+font-size: 18px;
+}
+}
 </style>
 </head>
 
 <body>
 
+<!-- الجزيئات الخلفية المضيئة والمتحركة لتضيف جمدان وفخامة للموقع -->
 <div id="particles"></div>
 
-<div class="header">
-<img src="./logo.png" alt="logo">
-<span class="status">Online</span>
+<div class="main-wrapper">
+    
+    <!-- النص الأيسر الفخم الثابت -->
+    <div class="profile-sidebar">
+        <div class="logo-wrapper">
+            <img src="./logo.png" alt="Codeix Logo">
+        </div>
+        <div class="company-info">
+            <h1>Codeix</h1>
+            <p>Innovative Tech Solutions & Media Hub</p>
+            <div class="status-badge">Active Workspace</div>
+        </div>
+    </div>
+
+    <!-- النص الأيمن الممتد المخصص للروابط الحية -->
+    <div class="links-section">
+
+        <a class="link-card website" href="https://adham422.github.io/t-tec-company/#/" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fa-solid fa-globe"></i></div>
+                <div class="card-info">
+                    <span class="card-title">Official Website</span>
+                    <span class="card-subtitle">Explore our main projects & services</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card facebook" href="https://www.facebook.com/profile.php?id=61589598104517" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-facebook-f"></i></div>
+                <div class="card-info">
+                    <span class="card-title">Facebook Community</span>
+                    <span class="card-subtitle">Follow our latest news & updates</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card linkedin" href="https://www.linkedin.com/company/codeix/about/?viewAsMember=true" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-linkedin-in"></i></div>
+                <div class="card-info">
+                    <span class="card-title">LinkedIn Network</span>
+                    <span class="card-subtitle">Connect with our corporate profile</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card instagram" href="https://www.instagram.com/codeix_company/?hl=en" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-instagram"></i></div>
+                <div class="card-info">
+                    <span class="card-title">Instagram Feed</span>
+                    <span class="card-subtitle">Take a sneak peek behind the scenes</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card youtube" href="https://www.youtube.com/@adhamhashem5303" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-youtube"></i></div>
+                <div class="card-info">
+                    <span class="card-title">YouTube Channel</span>
+                    <span class="card-subtitle">Watch our premium video content</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card twitter" href="https://x.com/Codeix0" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-twitter"></i></div>
+                <div class="card-info">
+                    <span class="card-title">Twitter / X</span>
+                    <span class="card-subtitle">Get immediate updates and short news</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card tiktok" href="https://www.tiktok.com/@codeix0?lang=en" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-tiktok"></i></div>
+                <div class="card-info">
+                    <span class="card-title">TikTok Creative</span>
+                    <span class="card-subtitle">Short engaging tech videos & trends</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card snapchat" href="https://www.snapchat.com/web" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-snapchat-ghost"></i></div>
+                <div class="card-info">
+                    <span class="card-title">Snapchat Hub</span>
+                    <span class="card-subtitle">Daily stories & live moments</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="link-card github" href="https://github.com/codeix0" target="_blank">
+            <div class="card-left">
+                <div class="icon-holder"><i class="fab fa-github"></i></div>
+                <div class="card-info">
+                    <span class="card-title">GitHub Repository</span>
+                    <span class="card-subtitle">Review our open-source contributions</span>
+                </div>
+            </div>
+            <div class="arrow-action"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+    </div>
 </div>
 
-<div class="icons">
-
-<div class="icon-box">
-<a class="icon website" href="https://adham422.github.io/t-tec-company/#/" target="_blank">
-<i class="fa-solid fa-globe"></i>
-</a>
-<span class="icon-text">Website</span>
-</div>
-
-<div class="icon-box">
-<a class="icon facebook" href="https://www.facebook.com/profile.php?id=61589598104517" target="_blank">
-<i class="fab fa-facebook-f"></i>
-</a>
-<span class="icon-text">Facebook</span>
-</div>
-
-<div class="icon-box">
-<a class="icon linkedin" href="https://www.linkedin.com/company/codeix/about/?viewAsMember=true" target="_blank">
-<i class="fab fa-linkedin-in"></i>
-</a>
-<span class="icon-text">LinkedIn</span>
-</div>
-
-<div class="icon-box">
-<a class="icon instagram" href="https://www.instagram.com/codeix_company/?hl=en" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-<span class="icon-text">Instagram</span>
-</div>
-
-<div class="icon-box">
-<a class="icon youtube" href="https://www.youtube.com/@adhamhashem5303" target="_blank">
-<i class="fab fa-youtube"></i>
-</a>
-<span class="icon-text">YouTube</span>
-</div>
-
-<div class="icon-box">
-<a class="icon twitter" href="https://x.com/Codeix0" target="_blank">
-<i class="fab fa-twitter"></i>
-</a>
-<span class="icon-text">Twitter</span>
-</div>
-
-<div class="icon-box">
-<a class="icon tiktok" href="https://www.tiktok.com/@codeix0?lang=en" target="_blank">
-<i class="fab fa-tiktok"></i>
-</a>
-<span class="icon-text">TikTok</span>
-</div>
-
-<div class="icon-box">
-<a class="icon snapchat" href="https://www.snapchat.com/web" target="_blank">
-<i class="fab fa-snapchat-ghost"></i>
-</a>
-<span class="icon-text">Snapchat</span>
-</div>
-
-<div class="icon-box">
-<a class="icon github" href="https://github.com/codeix0" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-<span class="icon-text">GitHub</span>
-</div>
-
-</div>
-
+<!-- كود الـ Particles الفخم بتعديلات التفاعل السلس -->
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
 <script>
 tsParticles.load("particles", {
   particles: {
-    number: { value: 80 },
+    number: { value: 40, density: { enable: true, area: 800 } },
+    color: { value: "#6366f1" },
+    opacity: { value: 0.15 },
     size: { value: 2 },
-    move: { speed: 1 },
-    opacity: { value: 0.4 },
-    links: {
-      enable: true,
-      distance: 120,
-      color: "#ffffff",
-      opacity: 0.2
-    }
+    move: { enable: true, speed: 0.8, direction: "none", random: true },
+    links: { enable: true, distance: 150, color: "#6366f1", opacity: 0.08, width: 1 }
+  },
+  interactivity: {
+    events: { onHover: { enable: true, mode: "grab" } },
+    modes: { grab: { distance: 150, links: { opacity: 0.25 } } }
   }
 });
 </script>
